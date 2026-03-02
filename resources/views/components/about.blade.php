@@ -29,7 +29,7 @@
                         </div>
 
                         <div class="col-lg-12 d-flex align-items-start mb-4">
-                            <i class="bi bi-leaf me-4 display-6"></i>
+                            <i class="bi bi-cup-hot me-4 display-6"></i>
                             <div>
                                 <h4 class="m-0 h5 text-white">100% Natural Coffee</h4>
                                 <p class="text-white opacity-50">No additives, no blending — pure Indonesian specialty
@@ -55,14 +55,14 @@
                             </div>
                         </div>
 
-                        <div class="col-lg-12 d-flex align-items-start mb-4">
+                        {{-- <div class="col-lg-12 d-flex align-items-start mb-4">
                             <i class="bi bi-globe me-4 display-6"></i>
                             <div>
                                 <h4 class="m-0 h5 text-white">Global Export Ready</h4>
                                 <p class="text-white opacity-50">Successfully exported to Korea, Australia, Europe, and
                                     more with structured shipment documentation.</p>
                             </div>
-                        </div>
+                        </div> --}}
 
                         <div class="col-lg-12 d-flex align-items-start">
                             <i class="bi bi-people me-4 display-6"></i>
