@@ -10,7 +10,7 @@
         <nav id="navmenu" class="navmenu">
             <ul>
                 <li><a href="{{ url('/') }}" class="active">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
+                <li><a href="about-us">About Us</a></li>
                 <li><a href="services.html">Our Services</a></li>
                 <li><a href="testimonials.html">Testimonials</a></li>
                 <li><a href="blog">Blog</a></li>
