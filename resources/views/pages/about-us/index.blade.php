@@ -3,7 +3,7 @@
 @section('content')
     <!-- Page Title -->
     <div class="page-title dark-background" data-aos="fade"
-        style="background-image: url('{{ asset('assets/img/page-title-bg.jpg') }}');">
+        style="background-image: url('{{ asset('storage/img/page-title-bg.webp') }}');">
         <div class="container position-relative">
             <h1>About Us</h1>
             <p>CV. Banyumas Bonanza Indonesia — Premier Indonesian Coffee Producer &amp; Exporter of Java Slamet Coffee
@@ -24,7 +24,8 @@
             <div class="row gy-4 justify-content-between align-items-center">
 
                 <div class="col-lg-6 order-lg-2 position-relative" data-aos="zoom-out">
-                    <img src="{{ asset('assets/img/coffee/about-coffee.jpg') }}" alt="Java Slamet Coffee" class="img-fluid">
+                    <img src="{{ asset('storage/img/coffee/about-coffee.jpg') }}" alt="Java Slamet Coffee"
+                        class="img-fluid">
                 </div>
 
                 <div class="col-lg-5 order-lg-1" data-aos="fade-up" data-aos-delay="100">
@@ -69,7 +70,7 @@
             <div class="row gy-4 justify-content-between align-items-center">
 
                 <div class="col-lg-5" data-aos="fade-up" data-aos-delay="100">
-                    <img src="{{ asset('assets/img/coffee/heritage.jpg') }}" alt="Coffee Heritage"
+                    <img src="{{ asset('storage/img/coffee/heritage.jpg') }}" alt="Coffee Heritage"
                         class="img-fluid rounded">
                 </div>
 

@@ -1,20 +1,31 @@
 <header id="header" class="header d-flex align-items-center position-relative">
     <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-        <a href="{{ url('/') }}" class="logo d-flex align-items-center">
-            <!-- Uncomment the line below if you also wish to use an image logo -->
-            <img src="{{ asset('assets/img/logo.png') }}" alt="AgriCulture">
-            <!-- <h1 class="sitename">AgriCulture</h1> -->
+        <a href="{{ route('home') }}" class="logo d-flex align-items-center">
+            <img src="{{ asset('assets/img/logo.png') }}" alt="Banyumas Bonanza">
         </a>
 
         <nav id="navmenu" class="navmenu">
             <ul>
-                <li><a href="{{ url('/') }}" class="active">Home</a></li>
-                <li><a href="about-us">About Us</a></li>
-                <li><a href="services.html">Our Services</a></li>
-                <li><a href="testimonials.html">Testimonials</a></li>
-                <li><a href="blog">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li>
+                    <a href="{{ route('home') }}" class="{{ request()->routeIs('home') ? 'active' : '' }}">
+                        Home
+                    </a>
+                </li>
+                <li>
+                    <a href="{{ route('about.index') }}"
+                        class="{{ request()->routeIs('about.index') ? 'active' : '' }}">
+                        About Us
+                    </a>
+                </li>
+                <li><a href="#">Our Services</a></li>
+                <li><a href="#">Testimonials</a></li>
+                <li>
+                    <a href="{{ route('blog.index') }}" class="{{ request()->routeIs('blog.*') ? 'active' : '' }}">
+                        Blog
+                    </a>
+                </li>
+                <li><a href="#">Contact</a></li>
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
