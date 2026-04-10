@@ -1,0 +1,172 @@
+/* ================================================================
+   CARA PENGGUNAAN / HOW TO USE:
+
+   Ganti bagian "Font & Color Variables" di file main.css Anda
+   (biasanya di baris 1-60) dengan kode di bawah ini.
+
+   Atau, tambahkan file ini SETELAH <link> main.css di HTML:
+   <link rel="stylesheet" href="main.css">
+   <link rel="stylesheet" href="main-coffee-theme.css">  ← tambahkan ini
+   ================================================================ */
+
+/**
+* Template Name: AgriCulture — Modified for CV. Banyumas Bonanza Indonesia
+* Original: https://bootstrapmade.com/agriculture-bootstrap-website-template/
+* Color Palette: Warm Coffee (Deep Coffee Brown + Terracotta Accent)
+*/
+
+/*--------------------------------------------------------------
+# Font & Color Variables
+--------------------------------------------------------------*/
+/* Fonts */
+:root {
+  --default-font: "Open Sans",  system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --heading-font: "Marcellus",  sans-serif;
+  --nav-font: "Marcellus",  sans-serif;
+}
+
+/* Global Colors */
+:root { 
+  --background-color: #f8f5f0;  /* Warm off-white — like natural parchment */
+  --default-color: #261e14;     /* Dark coffee brown — main text */
+  --heading-color: #3d2408;     /* Deep roasted brown — headings */
+  --accent-color: #5c3b1e;      /* Coffee Brown — primary brand accent (replaces green) */
+  --surface-color: #fdfcf9;     /* Cream — card/box backgrounds */
+  --contrast-color: #ffffff;    /* White — text on dark/accent backgrounds */
+}
+
+/* Nav Menu Colors */
+:root {
+  --nav-color: #3d2408;
+  --nav-hover-color: #c26a2a;              /* Warm Terracotta — nav hover/active */
+  --nav-mobile-background-color: #f8f5f0;
+  --nav-dropdown-background-color: #fdfcf9;
+  --nav-dropdown-color: #3d2408;
+  --nav-dropdown-hover-color: #c26a2a;
+}
+
+/* Color Presets */
+.light-background {
+  --background-color: #f2ece3;  /* Warm beige for alternate sections */
+  --surface-color: #fdfcf9;
+}
+
+.dark-background {
+  --background-color: #1a1410;  /* Very dark espresso */
+  --default-color: #e8ddd0;
+  --heading-color: #f0e6d8;
+  --accent-color: #c49a6c;      /* Warm gold-brown for dark sections */
+  --surface-color: #251f18;
+  --contrast-color: #ffffff;
+}
+
+/* Smooth scroll */
+:root {
+  scroll-behavior: smooth;
+}
+
+/* ================================================================
+   ADDITIONAL COFFEE THEME REFINEMENTS
+   (Overrides specific elements for better coffee brand feel)
+   ================================================================ */
+
+/* Slightly warmer body background on scroll/sticky header */
+.scrolled .header {
+  background-color: #f4f0e8 !important;
+  box-shadow: 0px 0 18px rgba(38, 30, 20, 0.12);
+}
+
+/* Hero carousel overlay — warmer tint */
+.hero .carousel-item:before {
+  background: color-mix(in srgb, #1a1008, transparent 45%);
+}
+
+/* Section title accent underline — now terracotta */
+.section-title h2 {
+  color: #c26a2a;
+}
+
+/* Footer h4 underline decoration — terracotta */
+.footer h4::after {
+  background: #c26a2a;
+}
+
+/* Testimonial client name — terracotta */
+.testimonials .testimonial .client-name {
+  color: #c26a2a;
+}
+
+/* Post date badge — terracotta background */
+.recent-posts .post-item .post-date,
+.blog-posts-2 .meta .post-date {
+  background-color: #c26a2a;
+}
+
+/* Scroll top button — coffee brown */
+.scroll-top {
+  background-color: #5c3b1e;
+}
+.scroll-top:hover {
+  background-color: #c26a2a;
+}
+
+/* Preloader spinner — coffee brown */
+#preloader:before {
+  border-color: #5c3b1e transparent #5c3b1e transparent;
+}
+
+/* Widget title underline — terracotta */
+.widget-title:after {
+  background: #c26a2a;
+}
+
+/* Blog detail blockquote left border */
+.blog-details .content blockquote:after {
+  background-color: #c26a2a;
+}
+
+/* About section background */
+.about .content {
+  background: #5c3b1e;
+}
+
+/* Services 2 swiper pagination bullet active */
+.services-2 .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #c26a2a !important;
+}
+
+/* Social links hover */
+.footer .social-links a:hover {
+  background: #c26a2a;
+}
+
+/* Contact info icon color */
+.contact .info-item i {
+  color: #c26a2a;
+}
+
+/* Team position label */
+.team .person .person-contents .position {
+  color: #c26a2a;
+}
+
+/* Recent posts / blog meta icon */
+.recent-posts .post-item .meta i,
+.blog-posts-2 .meta i {
+  color: #c26a2a;
+}
+
+/* Readmore hover */
+.recent-posts .post-item:hover .post-title,
+.recent-posts .post-item:hover .readmore,
+.blog-posts-2 article:hover .post-title,
+.blog-posts-2 article:hover .readmore {
+  color: #c26a2a;
+}
+
+/* Navigation active indicator */
+.navmenu li:hover > a,
+.navmenu .active,
+.navmenu .active:focus {
+  color: #c26a2a;
+}

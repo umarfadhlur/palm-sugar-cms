@@ -18,7 +18,13 @@
                         About Us
                     </a>
                 </li>
-                <li><a href="#">Our Services</a></li>
+                {{-- <li><a href="#">Our Services</a></li> --}}
+                <li>
+                    <a href="{{ route('products.index') }}"
+                        class="{{ request()->routeIs('products.*') ? 'active' : '' }}">
+                        Our Products
+                    </a>
+                </li>
                 <li><a href="#">Testimonials</a></li>
                 <li>
                     <a href="{{ route('blog.index') }}" class="{{ request()->routeIs('blog.*') ? 'active' : '' }}">
@@ -29,6 +35,9 @@
             </ul>
             <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
         </nav>
+
+        {{-- Language Switcher --}}
+        @include('components.language-switcher')
 
     </div>
 </header>
