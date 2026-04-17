@@ -6,6 +6,7 @@ use App\Http\Controllers\AboutController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\MessageController;
 
 
 Route::get('/', [HomeController::class, 'index'])->name('home');
@@ -31,4 +32,5 @@ Route::get('/preview', function () {
 });
 
 // Contact form submission
-Route::post('/contact/send', [ContactController::class, 'store'])->name('contact.store');
+Route::get('/contact', [ContactController::class, 'index'])->name('contact.index');
+Route::post('/contact/send', [MessageController::class, 'store'])->name('contact.store');

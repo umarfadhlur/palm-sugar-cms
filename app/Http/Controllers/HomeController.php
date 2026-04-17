@@ -24,11 +24,11 @@ class HomeController extends Controller
         $posts = Post::latest()->limit(3)->get();
         $featuredProducts = Product::where('is_featured', true)
         ->latest()
-        ->take(4)
+        ->take(3)
         ->get();
 
         // Kirim semua data (termasuk yang kosong) ke view
-        return view('pages.home', compact(
+        return view('pages.home-new', compact(
             'sliders',
             'services',
             'testimonials',

@@ -1,168 +1,3 @@
-{{-- resources/views/components/hero.blade.php --}}
-
-<style>
-    :root {
-        --font-display: 'Instrument Serif', Georgia, serif;
-        --color-primary: #5c3b1e;
-        --color-primary-hover: #422a12;
-        --color-primary-highlight: #e4d7c8;
-        --color-accent: #c26a2a;
-        --color-text-muted: #7a6e62;
-        --color-divider: #d8d0c4;
-        --color-surface-offset: #f2ece3;
-    }
-
-    #hero {
-        min-height: calc(100dvh - 72px);
-        background-color: var(--color-surface-offset);
-        position: relative;
-        overflow: hidden;
-    }
-
-    .hero-bg {
-        position: absolute;
-        inset: 0;
-        background:
-            radial-gradient(ellipse 70% 60% at 80% 50%, oklch(0.35 0.08 50 / 0.08) 0%, transparent 70%),
-            radial-gradient(ellipse 50% 50% at 20% 80%, oklch(0.5 0.1 40 / 0.05) 0%, transparent 60%);
-        pointer-events: none;
-    }
-
-    .hero-badge {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.25rem 1rem;
-        background: var(--color-primary-highlight);
-        color: var(--color-primary);
-        font-size: 0.75rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        border-radius: 9999px;
-        border: 1px solid rgb(92 59 30 / 0.2);
-    }
-
-    .hero-title {
-        font-family: var(--font-display);
-        font-size: clamp(2.5rem, 1rem + 4vw, 5rem);
-        line-height: 1.1;
-        color: #261e14;
-    }
-
-    .hero-title em {
-        font-style: italic;
-        color: var(--color-accent);
-    }
-
-    .hero-subtitle {
-        font-size: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
-        color: var(--color-text-muted);
-        line-height: 1.7;
-        max-width: 52ch;
-    }
-
-    .btn-hero-primary {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.75rem 2rem;
-        background: var(--color-primary);
-        color: #faf8f4 !important;
-        font-size: 0.875rem;
-        font-weight: 600;
-        border-radius: 9999px;
-        text-decoration: none;
-        border: none;
-        box-shadow: 0 4px 12px rgb(0 0 0 / 0.10);
-        transition: background 180ms, box-shadow 180ms;
-    }
-
-    .btn-hero-primary:hover {
-        background: var(--color-primary-hover);
-        box-shadow: 0 12px 32px rgb(0 0 0 / 0.14);
-    }
-
-    .btn-hero-secondary {
-        display: inline-flex;
-        align-items: center;
-        gap: 0.5rem;
-        padding: 0.75rem 2rem;
-        background: transparent;
-        color: #261e14 !important;
-        font-size: 0.875rem;
-        font-weight: 500;
-        border-radius: 9999px;
-        text-decoration: none;
-        border: 1px solid var(--color-divider);
-        transition: background 180ms;
-    }
-
-    .btn-hero-secondary:hover {
-        background: var(--color-surface-offset);
-    }
-
-    .hero-stats {
-        border-top: 1px solid var(--color-divider);
-        padding-top: 3rem;
-        margin-top: 3rem;
-    }
-
-    .hero-stat-value {
-        font-family: var(--font-display);
-        font-size: clamp(1.5rem, 1rem + 1.5vw, 2.25rem);
-        color: var(--color-primary);
-        line-height: 1;
-        margin-bottom: 0.25rem;
-    }
-
-    .hero-stat-label {
-        font-size: 0.75rem;
-        color: var(--color-text-muted);
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-    }
-
-    .hero-image-wrap {
-        border-radius: 1rem;
-        overflow: hidden;
-        aspect-ratio: 4/5;
-        box-shadow: 0 12px 32px rgb(0 0 0 / 0.14);
-    }
-
-    .hero-image-wrap img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-
-    .hero-image-badge {
-        position: absolute;
-        bottom: 1.5rem;
-        left: 1.5rem;
-        background: rgb(250 248 244 / 0.95);
-        backdrop-filter: blur(8px);
-        padding: 0.75rem 1.25rem;
-        border-radius: 0.75rem;
-        border: 1px solid var(--color-divider);
-        box-shadow: 0 4px 12px rgb(0 0 0 / 0.10);
-    }
-
-    .hero-image-badge-label {
-        font-size: 0.75rem;
-        color: var(--color-text-muted);
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-        margin-bottom: 0.25rem;
-    }
-
-    .hero-image-badge-value {
-        font-family: var(--font-display);
-        font-size: clamp(1.125rem, 1rem + 0.75vw, 1.5rem);
-        color: #261e14;
-    }
-</style>
-
 <section id="hero" aria-labelledby="hero-heading" class="d-flex align-items-center py-5">
 
     <div class="hero-bg" aria-hidden="true"></div>
@@ -226,16 +61,47 @@
 
             </div>
 
-            {{-- RIGHT: Image --}}
+            {{-- RIGHT: Image Carousel --}}
             <div class="col-lg-6 d-none d-lg-block">
                 <div class="hero-image-wrap position-relative">
-                    <img src="{{ asset('storage/img/coffee/hero-coffee.jpg') }}" alt="@translate('Coffee farmer harvesting red coffee cherries on the slopes of Mount Slamet, Central Java', 'home', 'hero.img_alt')" width="600"
-                        height="750" loading="eager" decoding="async">
 
+                    <div class="swiper hero-swiper">
+                        <div class="swiper-wrapper">
+
+                            <div class="swiper-slide">
+                                <img src="{{ asset('assets/img/coffee/hero-coffee.jpeg') }}" alt="@translate('Coffee farmer harvesting red coffee cherries on the slopes of Mount Slamet, Central Java', 'home', 'hero.img_alt')"
+                                    width="600" height="750" loading="eager" decoding="async">
+                            </div>
+
+                            <div class="swiper-slide">
+                                <img src="{{ asset('assets/img/coffee/hero-coffee-2.jpeg') }}" alt="@translate('Green coffee beans drying on raised beds, Central Java', 'home', 'hero.img_alt2')"
+                                    width="600" height="750" loading="lazy" decoding="async">
+                            </div>
+
+                            <div class="swiper-slide">
+                                <img src="{{ asset('assets/img/coffee/hero-coffee-3.jpeg') }}" alt="@translate('Freshly harvested Arabica coffee cherries from Mount Slamet', 'home', 'hero.img_alt3')"
+                                    width="600" height="750" loading="lazy" decoding="async">
+                            </div>
+
+                            <div class="swiper-slide">
+                                <img src="{{ asset('assets/img/coffee/hero-coffee-4.jpeg') }}" alt="@translate('Freshly breweed coffee', 'home', 'hero.img_alt4')"
+                                    width="600" height="750" loading="lazy" decoding="async">
+                            </div>
+
+                        </div>
+
+                        {{-- Pagination dots --}}
+                        {{-- <div class="swiper-pagination hero-swiper-pagination"></div> --}}
+                    </div>
+
+                    {{-- Badge tetap di atas carousel --}}
                     <div class="hero-image-badge">
-                        <div class="hero-image-badge-label">@translate('Cupping Score', 'home', 'hero.badge_label')</div>
+                        <div class="hero-image-badge-label">
+                            @translate('Cupping Score', 'home', 'hero.badge_label')
+                        </div>
                         <div class="hero-image-badge-value">84.25 Arabica</div>
                     </div>
+
                 </div>
             </div>
 
@@ -243,3 +109,26 @@
     </div>
 
 </section>
+@push('scripts')
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            new Swiper('.hero-swiper', {
+                loop: true,
+                autoplay: {
+                    delay: 4000,
+                    disableOnInteraction: false,
+                    pauseOnMouseEnter: false,
+                },
+                speed: 900,
+                effect: 'fade',
+                fadeEffect: {
+                    crossFade: true
+                },
+                pagination: {
+                    el: '.hero-swiper-pagination',
+                    clickable: true,
+                },
+            });
+        });
+    </script>
+@endpush

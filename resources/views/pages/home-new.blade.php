@@ -32,4 +32,26 @@
     @include('components-new.contact')
     {{-- /Contact --}}
 
+    <div class="footer-cta">
+        <div class="container">
+            <div class="footer-cta-inner" data-aos="fade-up">
+                <div>
+                    <h3 class="footer-cta-title">
+                        @translate('Ready to Source Premium Indonesian Products?', 'home', 'footer.cta_title')
+                    </h3>
+                    <p class="footer-cta-desc">
+                        @translate('Let\'s discuss your requirements. Our export team is ready to assist you.', 'home', 'footer.cta_desc')
+                    </p>
+                </div>
+                <a href="#contact" class="btn-footer-cta">
+                    @translate('Contact Us Now', 'home', 'footer.cta_btn')
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" aria-hidden="true">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
+
 @endsection

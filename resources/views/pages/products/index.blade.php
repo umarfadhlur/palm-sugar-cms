@@ -7,23 +7,27 @@
 
 @section('content')
 
-    {{-- Page Title --}}
-    <div class="page-title dark-background" style="background-image: url('{{ asset('assets/img/page-title-bg.jpg') }}');">
-        <div class="container position-relative">
-            <h1>Our Products</h1>
-            <p>Specialty Green Coffee Beans from Central Java, Indonesia</p>
-            <nav class="breadcrumbs">
-                <ol>
-                    <li><a href="{{ route('home') }}">Home</a></li>
-                    <li class="current">Products</li>
-                </ol>
-            </nav>
-        </div>
-    </div>
 
-    {{-- Products Grid --}}
-    <section id="products" class="services section">
+    {{-- Products Snippet --}}
+    <section id="products" class="products-snippet section">
         <div class="container">
+
+            {{-- Header snippet (tanpa CTA di kanan) --}}
+            <div class="d-flex flex-column flex-md-row align-items-md-end justify-content-md-between mb-5 gap-3"
+                data-aos="fade-up">
+                <div class="flex-grow-1">
+                    <span class="products-snippet-tag">
+                        @translate('Our Products', 'products', 'products.tag')
+                    </span>
+                    <h2 class="products-snippet-title mt-3 mb-0">
+                        @translate('Specialty Green Coffee Beans from', 'products', 'products.title')
+                        <em>@translate('Central Java', 'products', 'products.title_em')</em>
+                    </h2>
+                    <p class="products-snippet-subtitle mt-3 mb-0">
+                        @translate('Premium Indonesian Arabica and Robusta coffee, traceable by origin and ready for export.', 'products', 'products.subtitle')
+                    </p>
+                </div>
+            </div>
 
             @php
                 $categories = $products->groupBy(fn($p) => $p->specifications['category'] ?? 'Other');
@@ -31,12 +35,11 @@
 
             @foreach ($categories as $category => $items)
                 <div class="mb-5" data-aos="fade-up">
-
                     {{-- Category heading --}}
                     <div class="d-flex align-items-center gap-3 mb-4">
-                        <h2 style="font-size: 1.4rem; margin: 0; color: var(--heading-color);">
+                        <h3 style="font-size: 1.15rem; margin: 0; color: var(--heading-color);">
                             {{ $category }} Coffee
-                        </h2>
+                        </h3>
                         <div
                             style="flex: 1; height: 1px; background: color-mix(in srgb, var(--default-color), transparent 88%);">
                         </div>
@@ -45,108 +48,84 @@
                         </span>
                     </div>
 
-                    <div class="row gy-4">
+                    <div class="row g-4">
                         @foreach ($items as $product)
-                            <div class="col-lg-4 col-md-6">
-                                <div class="service-item h-100 d-flex flex-column"
-                                    style="transition: transform 0.3s ease, box-shadow 0.3s ease;"
-                                    onmouseover="this.style.transform='translateY(-4px)'; this.style.boxShadow='0 12px 32px rgba(38,30,20,0.12)'"
-                                    onmouseout="this.style.transform=''; this.style.boxShadow=''">
+                            @php $specs = $product->specifications ?? []; @endphp
 
-                                    {{-- Thumbnail --}}
-                                    <div style="overflow:hidden; border-radius: 4px 4px 0 0;">
+                            <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="{{ $loop->index * 100 }}">
+                                <article class="product-card h-100">
+                                    <a href="{{ route('products.show', $product->slug) }}" class="product-card-img-wrap"
+                                        tabindex="-1" aria-hidden="true">
                                         <img src="{{ asset($product->thumbnail ?? 'assets/img/products/default.jpg') }}"
-                                            alt="{{ $product->name }}" class="img-fluid w-100"
-                                            style="height: 200px; object-fit: cover; transition: transform 0.5s ease;"
-                                            loading="lazy" onmouseover="this.style.transform='scale(1.05)'"
-                                            onmouseout="this.style.transform=''">
-                                    </div>
+                                            alt="{{ $product->name }}" class="product-card-img" loading="lazy"
+                                            decoding="async">
+                                    </a>
 
-                                    <div class="p-4 flex-grow-1 d-flex flex-column">
-                                        {{-- Category + Score badge --}}
-                                        <div class="d-flex justify-content-between align-items-center mb-2">
-                                            <span
-                                                style="font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--accent-color);">
+                                    <div class="product-card-body">
+                                        <div class="product-card-meta">
+                                            <span class="product-card-badge">
                                                 {{ $product->category }}
                                             </span>
+
                                             @if ($product->cupping_score)
-                                                <span
-                                                    style="
-                  background: color-mix(in srgb, var(--accent-color), transparent 88%);
-                  color: var(--accent-color);
-                  font-size: 12px; font-weight: 700;
-                  padding: 3px 10px; border-radius: 20px;">
+                                                <span class="product-card-score">
                                                     ☕ {{ $product->cupping_score }} pts
                                                 </span>
                                             @endif
                                         </div>
 
-                                        <h3 class="service-heading" style="font-size: 1.1rem;">{{ $product->name }}</h3>
-                                        <p class="flex-grow-1" style="font-size: 14px;">{{ $product->short_description }}
+                                        <h3 class="product-card-name">
+                                            <a href="{{ route('products.show', $product->slug) }}"
+                                                style="color:inherit; text-decoration:none;">
+                                                {{ $product->name }}
+                                            </a>
+                                        </h3>
+
+                                        <p class="product-card-desc">
+                                            {{ $product->short_description }}
                                         </p>
 
-                                        {{-- Mini specs --}}
-                                        @php $specs = $product->specifications ?? []; @endphp
-                                        <div class="row g-2 mt-2 mb-3"
-                                            style="border-top: 1px solid color-mix(in srgb, var(--default-color), transparent 90%); padding-top: 12px; font-size: 13px;">
+                                        <ul class="product-card-specs">
                                             @if (!empty($specs['origin']))
-                                                <div class="col-6">
-                                                    <div
-                                                        style="color: color-mix(in srgb, var(--default-color), transparent 50%); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em;">
-                                                        Origin</div>
-                                                    <strong>{{ Str::limit($specs['origin'], 30) }}</strong>
-                                                </div>
+                                                <li>
+                                                    <span class="spec-key">Origin</span>
+                                                    <span class="spec-val">{{ Str::limit($specs['origin'], 30) }}</span>
+                                                </li>
                                             @endif
                                             @if (!empty($specs['altitude']))
-                                                <div class="col-6">
-                                                    <div
-                                                        style="color: color-mix(in srgb, var(--default-color), transparent 50%); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em;">
-                                                        Altitude</div>
-                                                    <strong>{{ $specs['altitude'] }}</strong>
-                                                </div>
+                                                <li>
+                                                    <span class="spec-key">Altitude</span>
+                                                    <span class="spec-val">{{ $specs['altitude'] }}</span>
+                                                </li>
                                             @endif
                                             @if (!empty($specs['process']))
-                                                <div class="col-6">
-                                                    <div
-                                                        style="color: color-mix(in srgb, var(--default-color), transparent 50%); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em;">
-                                                        Process</div>
-                                                    <strong>{{ $specs['process'] }}</strong>
-                                                </div>
+                                                <li>
+                                                    <span class="spec-key">Process</span>
+                                                    <span class="spec-val">{{ $specs['process'] }}</span>
+                                                </li>
                                             @endif
                                             @if (!empty($specs['annual_capacity']))
-                                                <div class="col-6">
-                                                    <div
-                                                        style="color: color-mix(in srgb, var(--default-color), transparent 50%); font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em;">
-                                                        Capacity</div>
-                                                    <strong>{{ $specs['annual_capacity'] }}</strong>
-                                                </div>
+                                                <li>
+                                                    <span class="spec-key">Capacity</span>
+                                                    <span class="spec-val">{{ $specs['annual_capacity'] }}</span>
+                                                </li>
                                             @endif
-                                        </div>
+                                        </ul>
 
-                                        {{-- Taste notes --}}
                                         @if (!empty($specs['taste_notes']))
-                                            <div class="d-flex flex-wrap gap-1 mb-3">
+                                            <div class="product-card-tags">
                                                 @foreach ($specs['taste_notes'] as $note)
-                                                    <span
-                                                        style="
-                  font-size: 11px; padding: 2px 8px;
-                  border-radius: 20px;
-                  border: 1px solid color-mix(in srgb, var(--accent-color), transparent 70%);
-                  color: var(--accent-color);">
-                                                        {{ $note }}
-                                                    </span>
+                                                    <span class="product-card-tag">{{ $note }}</span>
                                                 @endforeach
                                             </div>
                                         @endif
 
-                                        <a href="{{ route('products.show', $product->slug) }}"
-                                            class="d-flex align-items-center gap-1 mt-auto"
-                                            style="font-weight: 600; color: var(--accent-color); font-size: 14px; text-decoration: none;">
-                                            View Full Details <i class="bi bi-arrow-right"></i>
+                                        <a href="{{ route('products.show', $product->slug) }}" class="product-card-cta">
+                                            View Full Details
+                                            <i class="bi bi-arrow-right"></i>
                                         </a>
                                     </div>
-
-                                </div>
+                                </article>
                             </div>
                         @endforeach
                     </div>
@@ -157,6 +136,26 @@
     </section>
 
     {{-- CTA Strip --}}
-    {{-- @include('components-new.cta') --}}
+    <div class="footer-cta">
+        <div class="container">
+            <div class="footer-cta-inner" data-aos="fade-up">
+                <div>
+                    <h3 class="footer-cta-title">
+                        @translate('Interested in Our Coffee Products?', 'products', 'cta.title')
+                    </h3>
+                    <p class="footer-cta-desc">
+                        @translate('Request a sample or get a competitive export quote from our team.', 'products', 'cta.desc')
+                    </p>
+                </div>
+                <a href="{{ route('contact.index') }}" class="btn-footer-cta">
+                    @translate('Request a Sample', 'products', 'cta.btn')
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2" aria-hidden="true">
+                        <path d="M5 12h14M12 5l7 7-7 7" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </div>
 
 @endsection

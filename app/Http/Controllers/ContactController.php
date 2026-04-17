@@ -12,7 +12,7 @@ class ContactController extends Controller
      */
     public function index()
     {
-        //
+        return view('pages.contact.index');
     }
 
     /**
@@ -36,7 +36,7 @@ class ContactController extends Controller
             'message' => 'required|string|max:2000',
         ]);
 
-        ContactMessage::create($validated);
+        Contact::create($validated);
 
         return response()->json([
             'success' => true,

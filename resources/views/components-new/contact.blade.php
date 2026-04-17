@@ -23,13 +23,26 @@
             <div class="col-lg-4" data-aos="fade-right">
                 <div class="contact-info-wrap">
 
+                    {{-- <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="bi bi-person-fill"></i>
+                        </div>
+                        <div>
+                            <div class="contact-info-label">@translate('Managing Director', 'contact', 'info.director_label')</div>
+                            <div class="contact-info-value">Ibtisam Azizah</div>
+                        </div>
+                    </div> --}}
+
                     <div class="contact-info-item">
                         <div class="contact-info-icon">
                             <i class="bi bi-geo-alt-fill"></i>
                         </div>
                         <div>
-                            <div class="contact-info-label">@translate('Address', 'home', 'contact.address_label')</div>
-                            <div class="contact-info-value">Banyumas, Jawa Tengah, Indonesia</div>
+                            <div class="contact-info-label">@translate('Address', 'contact', 'info.address_label')</div>
+                            <div class="contact-info-value">
+                                Arcawinangun Estate AC 4 No. 8,<br>
+                                Banyumas, Central Java, Indonesia
+                            </div>
                         </div>
                     </div>
 
@@ -38,9 +51,9 @@
                             <i class="bi bi-envelope-fill"></i>
                         </div>
                         <div>
-                            <div class="contact-info-label">@translate('Email', 'home', 'contact.email_label')</div>
+                            <div class="contact-info-label">@translate('Email', 'contact', 'info.email_label')</div>
                             <div class="contact-info-value">
-                                <a href="mailto:info@javасламет.com">info@javaslamet.com</a>
+                                <a href="mailto:marketing@banyumasbonanza.com">marketing@banyumasbonanza.com</a>
                             </div>
                         </div>
                     </div>
@@ -52,8 +65,50 @@
                         <div>
                             <div class="contact-info-label">WhatsApp</div>
                             <div class="contact-info-value">
-                                <a href="https://wa.me/6281234567890" target="_blank" rel="noopener">+62
-                                    812-3456-7890</a>
+                                <a href="https://wa.me/6287851708758" target="_blank" rel="noopener">
+                                    +62 878-5170-8758
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{-- <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="bi bi-telephone-fill"></i>
+                        </div>
+                        <div>
+                            <div class="contact-info-label">@translate('Phone', 'contact', 'info.phone_label')</div>
+                            <div class="contact-info-value">
+                                <a href="tel:+62895422919799">+62 895-4229-19799</a>
+                            </div>
+                        </div>
+                    </div> --}}
+
+                    {{-- <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="bi bi-globe2"></i>
+                        </div>
+                        <div>
+                            <div class="contact-info-label">@translate('Website', 'contact', 'info.website_label')</div>
+                            <div class="contact-info-value">
+                                <a href="https://www.banyumasbonanza.com" target="_blank" rel="noopener">
+                                    www.banyumasbonanza.com
+                                </a>
+                            </div>
+                        </div>
+                    </div> --}}
+
+                    <div class="contact-info-item">
+                        <div class="contact-info-icon">
+                            <i class="bi bi-instagram"></i>
+                        </div>
+                        <div>
+                            <div class="contact-info-label">Instagram</div>
+                            <div class="contact-info-value">
+                                <a href="https://instagram.com/kopipbg" target="_blank" rel="noopener">@kopipbg</a>
+                                &nbsp;&amp;&nbsp;
+                                <a href="https://instagram.com/banyumasbonanza" target="_blank"
+                                    rel="noopener">@banyumasbonanza</a>
                             </div>
                         </div>
                     </div>
@@ -63,11 +118,25 @@
                             <i class="bi bi-clock-fill"></i>
                         </div>
                         <div>
-                            <div class="contact-info-label">@translate('Business Hours', 'home', 'contact.hours_label')</div>
+                            <div class="contact-info-label">@translate('Business Hours', 'contact', 'info.hours_label')</div>
                             <div class="contact-info-value">Mon – Fri, 08.00 – 17.00 WIB</div>
                         </div>
                     </div>
 
+                </div>
+
+                {{-- Map --}}
+                <div class="mt-4" data-aos="fade-up" data-aos-delay="100">
+                    <iframe src="https://www.google.com/maps?q=-7.414752,109.256392&z=17&output=embed" width="100%"
+                        height="260" style="border:0; border-radius:1rem; display:block;" allowfullscreen=""
+                        loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        title="Arcawinangun Estate AC 4 No. 8, Banyumas">
+                    </iframe>
+                    <a href="https://maps.google.com/?q=-7.414752,109.256392" target="_blank" rel="noopener"
+                        style="display:inline-flex; align-items:center; gap:0.4rem; margin-top:0.75rem; font-size:0.825rem; color:var(--nav-hover-color); text-decoration:none;">
+                        <i class="bi bi-box-arrow-up-right"></i>
+                        @translate('Open in Google Maps', 'contact', 'info.maps_link')
+                    </a>
                 </div>
             </div>
 
@@ -144,198 +213,13 @@
     </div>
 </section>
 
-<style>
-    .contact-snippet {
-        background-color: #faf8f4;
-    }
-
-    .contact-tag {
-        display: inline-flex;
-        align-items: center;
-        padding: 0.25rem 1rem;
-        background: #e4d7c8;
-        color: #5c3b1e;
-        font-size: 0.75rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.1em;
-        border-radius: 9999px;
-    }
-
-    .contact-title {
-        font-family: var(--font-display);
-        font-size: clamp(1.75rem, 1rem + 2vw, 2.75rem);
-        color: #261e14;
-        line-height: 1.15;
-    }
-
-    .contact-title em {
-        font-style: italic;
-        color: #c26a2a;
-    }
-
-    .contact-subtitle {
-        color: #7a6e62;
-        max-width: 52ch;
-        line-height: 1.8;
-    }
-
-    /* Info */
-    .contact-info-wrap {
-        display: flex;
-        flex-direction: column;
-        gap: 1.5rem;
-    }
-
-    .contact-info-item {
-        display: flex;
-        gap: 1rem;
-        align-items: flex-start;
-    }
-
-    .contact-info-icon {
-        width: 44px;
-        height: 44px;
-        background: #e4d7c8;
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: #5c3b1e;
-        font-size: 1.1rem;
-        flex-shrink: 0;
-    }
-
-    .contact-info-label {
-        font-size: 0.72rem;
-        font-weight: 600;
-        text-transform: uppercase;
-        letter-spacing: 0.08em;
-        color: #a08060;
-        margin-bottom: 0.2rem;
-    }
-
-    .contact-info-value {
-        font-size: 0.9rem;
-        color: #261e14;
-        font-weight: 500;
-    }
-
-    .contact-info-value a {
-        color: #c26a2a;
-        text-decoration: none;
-    }
-
-    .contact-info-value a:hover {
-        text-decoration: underline;
-    }
-
-    /* Form */
-    .contact-form {
-        background: #fff;
-        border: 1px solid #e8e0d5;
-        border-radius: 1rem;
-        padding: 2rem;
-        box-shadow: 0 2px 12px rgb(0 0 0 / 0.05);
-    }
-
-    .contact-label {
-        display: block;
-        font-size: 0.8rem;
-        font-weight: 600;
-        color: #4a3f35;
-        margin-bottom: 0.4rem;
-        text-transform: uppercase;
-        letter-spacing: 0.06em;
-    }
-
-    .contact-input {
-        width: 100%;
-        padding: 0.65rem 1rem;
-        border: 1.5px solid #d8d0c4;
-        border-radius: 0.6rem;
-        background: #faf8f4;
-        font-size: 0.9rem;
-        color: #261e14;
-        outline: none;
-        transition: border-color 150ms, box-shadow 150ms;
-    }
-
-    .contact-input:focus {
-        border-color: #c26a2a;
-        box-shadow: 0 0 0 3px rgb(194 106 42 / 0.12);
-        background: #fff;
-    }
-
-    .contact-input.is-invalid {
-        border-color: #e53e3e;
-    }
-
-    .contact-textarea {
-        resize: vertical;
-        min-height: 130px;
-    }
-
-    .contact-error {
-        font-size: 0.775rem;
-        color: #e53e3e;
-        margin-top: 0.3rem;
-        min-height: 1rem;
-    }
-
-    /* Submit button */
-    .btn-contact-submit {
-        width: 100%;
-        padding: 0.85rem;
-        background: #5c3b1e;
-        color: #faf8f4;
-        font-size: 0.9rem;
-        font-weight: 700;
-        border: none;
-        border-radius: 0.75rem;
-        cursor: pointer;
-        transition: background 180ms, box-shadow 180ms;
-        box-shadow: 0 4px 12px rgb(0 0 0 / 0.10);
-    }
-
-    .btn-contact-submit:hover:not(:disabled) {
-        background: #422a12;
-        box-shadow: 0 8px 24px rgb(0 0 0 / 0.14);
-    }
-
-    .btn-contact-submit:disabled {
-        opacity: 0.7;
-        cursor: not-allowed;
-    }
-
-    /* Alert */
-    .contact-alert {
-        padding: 0.85rem 1.25rem;
-        border-radius: 0.65rem;
-        font-size: 0.875rem;
-        font-weight: 500;
-    }
-
-    .contact-alert.success {
-        background: #f0fdf4;
-        border: 1px solid #86efac;
-        color: #166534;
-    }
-
-    .contact-alert.error {
-        background: #fef2f2;
-        border: 1px solid #fca5a5;
-        color: #991b1b;
-    }
-</style>
-
 <script>
     document.addEventListener('DOMContentLoaded', function() {
         const form = document.getElementById('contactForm');
         const submitBtn = document.getElementById('contactSubmitBtn');
         const btnText = submitBtn.querySelector('.btn-contact-text');
         const btnLoad = submitBtn.querySelector('.btn-contact-loading');
-        const alert = document.getElementById('contactAlert');
+        const alertEl = document.getElementById('contactAlert');
 
         form.addEventListener('submit', async function(e) {
             e.preventDefault();
@@ -345,41 +229,34 @@
                 document.getElementById('err_' + f).textContent = '';
                 document.getElementById('cf_' + f).classList.remove('is-invalid');
             });
-            alert.className = 'contact-alert d-none mt-4';
-            alert.textContent = '';
+            alertEl.className = 'contact-alert d-none mt-4';
+            alertEl.textContent = '';
 
             // Loading state
             submitBtn.disabled = true;
             btnText.classList.add('d-none');
             btnLoad.classList.remove('d-none');
 
+            // FormData — CSRF token otomatis ikut dari @csrf hidden input
+            const formData = new FormData(form);
+
             try {
                 const res = await fetch('{{ route('contact.store') }}', {
                     method: 'POST',
                     headers: {
-                        'Content-Type': 'application/json',
-                        'X-CSRF-TOKEN': document.querySelector('input[name="_token"]')
-                            .value,
+                        'X-Requested-With': 'XMLHttpRequest',
                         'Accept': 'application/json',
                     },
-                    body: JSON.stringify({
-                        name: document.getElementById('cf_name').value,
-                        email: document.getElementById('cf_email').value,
-                        phone: document.getElementById('cf_phone').value,
-                        subject: document.getElementById('cf_subject').value,
-                        message: document.getElementById('cf_message').value,
-                    }),
+                    body: formData,
                 });
 
                 const data = await res.json();
 
                 if (res.ok && data.success) {
-                    // Success
-                    alert.textContent = data.message;
-                    alert.className = 'contact-alert success mt-4';
+                    alertEl.textContent = data.message;
+                    alertEl.className = 'contact-alert success mt-4';
                     form.reset();
                 } else if (res.status === 422 && data.errors) {
-                    // Validation errors
                     Object.entries(data.errors).forEach(([field, msgs]) => {
                         const errEl = document.getElementById('err_' + field);
                         const inputEl = document.getElementById('cf_' + field);
@@ -391,8 +268,8 @@
                 }
 
             } catch (err) {
-                alert.textContent = 'Something went wrong. Please try again.';
-                alert.className = 'contact-alert error mt-4';
+                alertEl.textContent = 'Something went wrong. Please try again.';
+                alertEl.className = 'contact-alert error mt-4';
             } finally {
                 submitBtn.disabled = false;
                 btnText.classList.remove('d-none');
