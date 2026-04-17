@@ -26,7 +26,7 @@
                         {{-- Thumbnail --}}
                         <div class="product-card-img-wrap">
                             @if ($product->thumbnail)
-                                <img src="{{ asset('storage/' . $product->thumbnail) }}" alt="{{ $product->name }}"
+                                <img src="{{ asset($product->thumbnail) }}" alt="{{ $product->name }}"
                                     class="product-card-img" loading="lazy" decoding="async">
                             @else
                                 <div class="product-card-img-placeholder">
