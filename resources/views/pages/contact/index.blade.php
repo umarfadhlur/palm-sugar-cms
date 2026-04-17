@@ -1,8 +1,14 @@
 @extends('layouts.app')
 
 @section('title', 'Contact Us')
-@section('meta_description', 'Get in touch with CV. Banyumas Bonanza Indonesia. Request coffee samples, get export
-    quotes, or discuss your sourcing needs.')
+@section('meta_description', 'Get in touch with CV. Banyumas Bonanza Indonesia. Request a sample, ask about export
+    pricing, or start a partnership with our team.')
+@section('og_title', 'Contact Us')
+@section('og_description', 'Get in touch with CV. Banyumas Bonanza Indonesia. Request a sample, ask about export
+    pricing, or start a partnership with our team.')
+@section('og_image', asset('assets/img/coffee/coffee.jpeg'))
+@section('og_url', route('contact.index'))
+@section('og_type', 'website')
 
 @section('content')
 

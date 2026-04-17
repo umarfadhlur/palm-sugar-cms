@@ -1,9 +1,14 @@
 @extends('layouts.app')
 
 @section('title', 'Blog')
-@section('meta_description',
-    'Get in touch with CV. Banyumas Bonanza Indonesia. Request coffee samples, get export
-    quotes, or discuss your sourcing needs.')
+@section('meta_description', 'Read the latest news, insights, and stories about Indonesian specialty coffee, farming
+    practices, and export updates from CV. Banyumas Bonanza Indonesia.')
+@section('og_title', 'Blog')
+@section('og_description', 'Read the latest news, insights, and stories about Indonesian specialty coffee, farming
+    practices, and export updates from CV. Banyumas Bonanza Indonesia.')
+@section('og_image', asset('assets/img/coffee/coffee.jpeg'))
+@section('og_url', route('blog.index'))
+@section('og_type', 'website')
 
 @section('content')
     <section id="blog" class="blog-snippet py-5 light-background">

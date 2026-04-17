@@ -1,9 +1,14 @@
 @extends('layouts.app')
 
 @section('title', 'Our Products')
-@section('meta_description',
-    'Premium Indonesian green coffee beans — Arabica and Robusta from Central Java.
-    Specialty-grade, traceable origin, export-ready.')
+@section('meta_description', 'Explore our range of premium Indonesian green coffee beans — Arabica and Robusta from
+    Central Java. Specialty-grade, traceable origin, export-ready.')
+@section('og_title', 'Our Products')
+@section('og_description', 'Explore our range of premium Indonesian green coffee beans — Arabica and Robusta from
+    Central Java. Specialty-grade, traceable origin, export-ready.')
+@section('og_image', asset('assets/img/coffee/coffee.jpeg'))
+@section('og_url', route('products.index'))
+@section('og_type', 'website')
 
 @section('content')
 

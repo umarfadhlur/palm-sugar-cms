@@ -1,7 +1,10 @@
 @extends('layouts.app')
 
 @section('title', $product->name)
-@section('meta_description', $product->short_description)
+@section('og_title', $product->name)
+@section('og_description', $product->short_description)
+@section('og_image', asset($product->thumbnail ?? 'assets/img/coffee/coffee.jpeg'))
+@section('og_url', route('products.show', $product->slug))
 
 @section('content')
 

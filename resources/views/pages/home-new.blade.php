@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('title', 'Home')
+@section('meta_description',
+    'Premium Indonesian green coffee beans — Arabica and Robusta from Central Java.
+    Specialty-grade, traceable origin, export-ready.')
 
 @section('content')
 

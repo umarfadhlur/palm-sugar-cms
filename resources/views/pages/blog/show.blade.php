@@ -1,5 +1,13 @@
 @extends('layouts.app')
 
+@section('title', $post->title)
+@section('meta_description', $post->excerpt ?? Str::limit(strip_tags($post->body), 160))
+@section('og_title', $post->title)
+@section('og_description', $post->excerpt ?? Str::limit(strip_tags($post->body), 160))
+@section('og_image', $post->thumbnail ? asset('storage/' . $post->thumbnail) : asset('assets/img/coffee/coffee.jpeg'))
+@section('og_url', route('blog.show', $post->slug))
+@section('og_type', 'article')
+
 @section('content')
     <section class="blog-detail-page py-5 light-background">
         <div class="container">
