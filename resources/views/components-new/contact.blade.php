@@ -53,7 +53,7 @@
                         <div>
                             <div class="contact-info-label">@translate('Email', 'contact', 'info.email_label')</div>
                             <div class="contact-info-value">
-                                <a href="mailto:marketing@banyumasbonanza.com">marketing@banyumasbonanza.com</a>
+                                <a href="mailto:inquiry@banyumasbonanza.com">inquiry@banyumasbonanza.com</a>
                             </div>
                         </div>
                     </div>

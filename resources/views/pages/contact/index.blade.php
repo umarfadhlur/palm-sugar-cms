@@ -1,10 +1,12 @@
 @extends('layouts.app')
 
 @section('title', 'Contact Us')
-@section('meta_description', 'Get in touch with CV. Banyumas Bonanza Indonesia. Request a sample, ask about export
+@section('meta_description',
+    'Get in touch with CV. Banyumas Bonanza Indonesia. Request a sample, ask about export
     pricing, or start a partnership with our team.')
 @section('og_title', 'Contact Us')
-@section('og_description', 'Get in touch with CV. Banyumas Bonanza Indonesia. Request a sample, ask about export
+@section('og_description',
+    'Get in touch with CV. Banyumas Bonanza Indonesia. Request a sample, ask about export
     pricing, or start a partnership with our team.')
 @section('og_image', asset('assets/img/coffee/coffee.jpeg'))
 @section('og_url', route('contact.index'))
@@ -55,7 +57,7 @@
                             <div>
                                 <div class="contact-info-label">@translate('Email', 'contact', 'info.email_label')</div>
                                 <div class="contact-info-value">
-                                    <a href="mailto:marketing@banyumasbonanza.com">marketing@banyumasbonanza.com</a>
+                                    <a href="mailto:inquiry@banyumasbonanza.com">inquiry@banyumasbonanza.com</a>
                                 </div>
                             </div>
                         </div>

@@ -77,7 +77,7 @@
                         </li>
                         <li>
                             <i class="bi bi-envelope-fill"></i>
-                            <a href="mailto:marketing@banyumasbonanza.com">marketing@banyumasbonanza.com</a>
+                            <a href="mailto:inquiry@banyumasbonanza.com">inquiry@banyumasbonanza.com</a>
                         </li>
                         <li>
                             <i class="bi bi-whatsapp"></i>
